@@ -146,16 +146,11 @@
     <Content Include="Assets\Vendor\bs\js\respond.min.js" />
     <Content Include="Assets\Vendor\ui-bootstrap-0.5.0.min.js" />
     <Content Include="Global.asax" />
-    <Content Include="HappyPortal.SetParameters.Prod.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <SubType>Designer</SubType>
-    </Content>
     <Content Include="Views\Index.html" />
     <Content Include="Assets\Vendor\angular.min.js" />
     <Content Include="Assets\Vendor\bs\css\bootstrap.min.css" />
     <Content Include="Assets\Vendor\bs\js\bootstrap.js" />
     <Content Include="Assets\Vendor\bs\js\bootstrap.min.js" />
-    <Content Include="parameters.xml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

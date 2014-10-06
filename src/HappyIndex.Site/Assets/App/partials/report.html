@@ -1,0 +1,61 @@
+﻿
+<div class="row">
+    <div class="col-xs-12" style="text-align: center">
+        <h1>Happiness Report</h1>
+    </div>
+</div>
+<div class="fluid-container">
+    <div class="row">
+        <div class="col-xs-6">
+            <div class="status-widget">
+                <h3>Todays Index</h3>
+                <div>{{model.companyFeedbackReport.happinessIndexToday | happinessIndex}}</div>
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <div class="status-widget">
+                <h3>All-time Index</h3>
+                <div>{{model.companyFeedbackReport.happinessIndex | happinessIndex}}</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="fluid-container">
+    <div class="row">
+        <div class="col-xs-12">
+            <h3>History</h3>
+            <div>
+                <div google-chart chart="model.chart"/>
+            </div>
+            {{model.companyFeedbackReport.feedbackCount}}
+        </div>
+    </div>
+</div>
+<div class="fluid-container">
+    <div class="row">
+        <div class="col-xs-6">
+            <h3>What can we do better</h3>
+            <div>
+                <table class="table">
+                    <tr ng-repeat="reason in model.companyFeedbackReport.unhappyReasons | orderBy:'-count' | filter:countFilter">
+                        <td>{{reason.questionText}}</td>
+                        <td>{{reason.count}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <h3>Why was it a good day?</h3>
+            <div>
+                <table class="table">
+                    <tr ng-repeat="reason in model.companyFeedbackReport.happyReasons | orderBy:'-count' | filter:countFilter">
+                        <td>{{reason.questionText}}</td>
+                        <td>{{reason.count}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+

@@ -99,11 +99,11 @@
     <Content Include="Assets\App\partials\indicator.html" />
     <Content Include="Assets\App\pollingStationStatusController.js" />
     <Content Include="Assets\App\services.js" />
-    <Content Include="Assets\img\neutralclick.png" />
-    <Content Include="Assets\img\neutral.png" />
-    <Content Include="Assets\img\saddy.png" />
-    <Content Include="Assets\img\smiley.png" />
-    <Content Include="Assets\img\tick.png" />
+    <Content Include="Assets\Img\neutralclick.png" />
+    <Content Include="Assets\Img\neutral.png" />
+    <Content Include="Assets\Img\saddy.png" />
+    <Content Include="Assets\Img\smiley.png" />
+    <Content Include="Assets\Img\tick.png" />
     <Content Include="Assets\site.css" />
     <Content Include="Assets\Vendor\angular-animate.min.js" />
     <Content Include="Assets\Vendor\angular-cookies.min.js" />

@@ -110,4 +110,4 @@ UpgradeLog*.XML
 
 node_modules/
 
-/src/HappyIndex.Site/ConnectionStrings.config
+*/ConnectionStrings.config

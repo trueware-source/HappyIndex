@@ -1,4 +1,5 @@
-﻿using Nancy;
+﻿using HappyIndex.Host.Lib;
+using Nancy;
 using Nancy.Conventions;
 
 public class CustomBoostrapper : DefaultNancyBootstrapper
@@ -6,9 +7,10 @@ public class CustomBoostrapper : DefaultNancyBootstrapper
     protected override void ConfigureConventions(NancyConventions conventions)
     {
         base.ConfigureConventions(conventions);
+    }
 
-        conventions.StaticContentsConventions.Add(
-            StaticContentConventionBuilder.AddDirectory("assets", @"assets")
-        );
+    protected override IRootPathProvider RootPathProvider
+    {
+        get { return new CustomRootPathProvider(); }
     }
 }

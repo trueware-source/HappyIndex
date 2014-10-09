@@ -7,11 +7,11 @@ public class Startup
 {
     public void Configuration(IAppBuilder app)
     {
-        app.UseFileServer(new FileServerOptions
-        {
-            FileSystem = new PhysicalFileSystem(GetStaticContentPath()),
-            RequestPath = new PathString("/assets")
-        });
+        //app.UseFileServer(new FileServerOptions
+        //{
+        //    FileSystem = new PhysicalFileSystem(GetStaticContentPath()),
+        //    RequestPath = new PathString("/assets")
+        //});
 
         app.UseNancy();
     }

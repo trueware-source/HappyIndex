@@ -68,6 +68,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Lib\CustomRootPathProvider.cs" />
     <Compile Include="Modules\Bootstrapper.cs" />
     <Compile Include="Modules\FeedbackModule.cs" />
     <Compile Include="Modules\PollingStationModule.cs" />
@@ -79,51 +80,51 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\Index.html" />
-    <Content Include="Assets\Vendor\bs\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="Assets\Vendor\bs\js\bootstrap.js" />
-    <Content Include="Assets\Vendor\bs\js\bootstrap.min.js" />
-    <Content Include="Assets\Vendor\bs\js\respond.min.js" />
-    <Content Include="Assets\Vendor\ng-google-chart.js" />
-    <Content Include="Assets\Vendor\ui-bootstrap-0.5.0.min.js" />
+    <Content Include="Content\Vendor\bs\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\Vendor\bs\js\bootstrap.js" />
+    <Content Include="Content\Vendor\bs\js\bootstrap.min.js" />
+    <Content Include="Content\Vendor\bs\js\respond.min.js" />
+    <Content Include="Content\Vendor\ng-google-chart.js" />
+    <Content Include="Content\Vendor\ui-bootstrap-0.5.0.min.js" />
+    <Content Include="Views\Index.html" />
     <None Include="App.config" />
-    <Content Include="Assets\Vendor\bs\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Assets\Vendor\bs\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="Assets\Vendor\bs\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\Vendor\bs\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\Vendor\bs\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\Vendor\bs\fonts\glyphicons-halflings-regular.woff" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\App\app.js" />
-    <Content Include="Assets\App\filters.js" />
-    <Content Include="Assets\App\indicatorController.js" />
-    <Content Include="Assets\App\manage-questions-controller.js" />
-    <Content Include="Assets\App\partials\indicator.html" />
-    <Content Include="Assets\App\partials\managequestions.html" />
-    <Content Include="Assets\App\partials\pollingstation.html" />
-    <Content Include="Assets\App\partials\pollingstationstatus.html" />
-    <Content Include="Assets\App\partials\report.html" />
-    <Content Include="Assets\App\pollingStationController.js" />
-    <Content Include="Assets\App\pollingStationStatusController.js" />
-    <Content Include="Assets\App\reportController.js" />
-    <Content Include="Assets\App\services.js" />
-    <Content Include="Assets\Img\neutral.png" />
-    <Content Include="Assets\Img\neutralclick.png" />
-    <Content Include="Assets\Img\saddy.png" />
-    <Content Include="Assets\Img\smiley.png" />
-    <Content Include="Assets\Img\tick.png" />
-    <Content Include="Assets\site.css" />
-    <Content Include="Assets\Vendor\angular-animate.min.js" />
-    <Content Include="Assets\Vendor\angular-cookies.min.js" />
-    <Content Include="Assets\Vendor\angular-mocks.js" />
-    <Content Include="Assets\Vendor\angular-resource.min.js" />
-    <Content Include="Assets\Vendor\angular-route.min.js" />
-    <Content Include="Assets\Vendor\angular.min.js" />
-    <Content Include="Assets\Vendor\angulartics-google-analytics.min.js" />
-    <Content Include="Assets\Vendor\angulartics.min.js" />
-    <Content Include="Assets\Vendor\bs\css\bootstrap-theme.css" />
-    <Content Include="Assets\Vendor\bs\css\bootstrap-theme.min.css" />
-    <Content Include="Assets\Vendor\bs\css\bootstrap.css" />
-    <Content Include="Assets\Vendor\bs\css\bootstrap.min.css" />
+    <Content Include="Content\App\app.js" />
+    <Content Include="Content\App\filters.js" />
+    <Content Include="Content\App\indicatorController.js" />
+    <Content Include="Content\App\manage-questions-controller.js" />
+    <Content Include="Content\App\partials\indicator.html" />
+    <Content Include="Content\App\partials\managequestions.html" />
+    <Content Include="Content\App\partials\pollingstation.html" />
+    <Content Include="Content\App\partials\pollingstationstatus.html" />
+    <Content Include="Content\App\partials\report.html" />
+    <Content Include="Content\App\pollingStationController.js" />
+    <Content Include="Content\App\pollingStationStatusController.js" />
+    <Content Include="Content\App\reportController.js" />
+    <Content Include="Content\App\services.js" />
+    <Content Include="Content\Img\neutral.png" />
+    <Content Include="Content\Img\neutralclick.png" />
+    <Content Include="Content\Img\saddy.png" />
+    <Content Include="Content\Img\smiley.png" />
+    <Content Include="Content\Img\tick.png" />
+    <Content Include="Content\site.css" />
+    <Content Include="Content\Vendor\angular-animate.min.js" />
+    <Content Include="Content\Vendor\angular-cookies.min.js" />
+    <Content Include="Content\Vendor\angular-mocks.js" />
+    <Content Include="Content\Vendor\angular-resource.min.js" />
+    <Content Include="Content\Vendor\angular-route.min.js" />
+    <Content Include="Content\Vendor\angular.min.js" />
+    <Content Include="Content\Vendor\angulartics-google-analytics.min.js" />
+    <Content Include="Content\Vendor\angulartics.min.js" />
+    <Content Include="Content\Vendor\bs\css\bootstrap-theme.css" />
+    <Content Include="Content\Vendor\bs\css\bootstrap-theme.min.css" />
+    <Content Include="Content\Vendor\bs\css\bootstrap.css" />
+    <Content Include="Content\Vendor\bs\css\bootstrap.min.css" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HappyIndex.Services\HappyIndex.Services.csproj">

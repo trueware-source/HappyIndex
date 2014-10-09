@@ -142,9 +142,6 @@
     <Folder Include="App_Start\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ConnectionStrings.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\HappyIndex.Services\HappyIndex.Services.csproj">
       <Project>{d1f5bb17-0308-4d9a-a566-162b2be8f591}</Project>
       <Name>HappyIndex.Services</Name>

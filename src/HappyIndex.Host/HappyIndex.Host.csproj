@@ -90,9 +90,6 @@
     <Content Include="Assets\Vendor\bs\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Assets\Vendor\bs\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Assets\Vendor\bs\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="ConnectionStrings.config">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

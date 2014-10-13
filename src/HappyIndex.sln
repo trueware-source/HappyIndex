@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{20483446-7974-45BA-AB20-581C1AB82349}"
 	ProjectSection(SolutionItems) = preProject
@@ -20,6 +20,30 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HappyIndex.Site.IntegrationTests", "HappyIndex.Site.IntegrationTests\HappyIndex.Site.IntegrationTests.csproj", "{034FAD81-375E-4706-87C2-1988A3B288F6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HappyIndex.Host", "HappyIndex.Host\HappyIndex.Host.csproj", "{48F6A1CB-0136-4710-BC22-043F8E50D66B}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "HappyIndex.Host.Fsharp", "HappyIndex.Host.Fsharp\HappyIndex.Host.Fsharp.fsproj", "{CF7F20EB-2B0E-456E-AFDB-8E9601F70794}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "HappyIndex.Client.Web", "http://localhost:2429", "{D6CEB251-DACF-4EB7-8C90-1C19FFBEA019}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_2429"
+		Debug.AspNetCompiler.PhysicalPath = "HappyIndex.Client.Web\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_2429\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_2429"
+		Release.AspNetCompiler.PhysicalPath = "HappyIndex.Client.Web\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_2429\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "HappyIndex.Client.Web\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +71,14 @@ Global
 		{48F6A1CB-0136-4710-BC22-043F8E50D66B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{48F6A1CB-0136-4710-BC22-043F8E50D66B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{48F6A1CB-0136-4710-BC22-043F8E50D66B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF7F20EB-2B0E-456E-AFDB-8E9601F70794}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF7F20EB-2B0E-456E-AFDB-8E9601F70794}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF7F20EB-2B0E-456E-AFDB-8E9601F70794}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF7F20EB-2B0E-456E-AFDB-8E9601F70794}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6CEB251-DACF-4EB7-8C90-1C19FFBEA019}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6CEB251-DACF-4EB7-8C90-1C19FFBEA019}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6CEB251-DACF-4EB7-8C90-1C19FFBEA019}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6CEB251-DACF-4EB7-8C90-1C19FFBEA019}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

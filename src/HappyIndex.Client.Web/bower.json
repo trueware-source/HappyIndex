@@ -1,0 +1,23 @@
+{
+  "name": "HappyIndex.Client.Web",
+  "version": "1.0.0",
+  "homepage": "https://github.com/trueware-source/HappyIndex-DotNetPoc",
+  "description": "HappyIndex web client",
+  "main": "Index.html",
+  "authors": [
+    "Terrence Benade"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angularjs": "~1.2.26",
+    "bootstrap": "~3.2.0"
+  }
+}

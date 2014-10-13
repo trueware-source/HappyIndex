@@ -1,5 +1,6 @@
 ﻿using Owin;
 using Microsoft.Owin;
+using Microsoft.Owin.Cors;
 using Microsoft.Owin.StaticFiles;
 using Microsoft.Owin.FileSystems;
 
@@ -12,7 +13,7 @@ public class Startup
         //    FileSystem = new PhysicalFileSystem(GetStaticContentPath()),
         //    RequestPath = new PathString("/assets")
         //});
-
+        app.UseCors(CorsOptions.AllowAll);
         app.UseNancy();
     }
 

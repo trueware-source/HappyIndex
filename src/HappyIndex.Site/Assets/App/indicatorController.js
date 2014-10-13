@@ -1,4 +1,4 @@
-﻿function IndicatorController($scope, $dialog, $log, $timeout, $location, pollingStationService, questionsService, Feedback, $cookies, $rootScope, $window) {
+﻿function IndicatorController($scope, $timeout, pollingStationService, questionsService, Feedback, $rootScope, $window) {
     $scope.model = {};
     $scope.model.clickingSmiley = false;
     $scope.model.clickingNeutral = false;
@@ -100,4 +100,4 @@
     };
 }
 
-IndicatorController.$inject = ['$scope', '$dialog', '$log', '$timeout', '$location', 'pollingStationService', 'questionsService', 'Feedback', '$cookies', '$rootScope', '$window'];
+IndicatorController.$inject = ['$scope', '$timeout', 'pollingStationService', 'questionsService', 'Feedback', '$rootScope', '$window'];

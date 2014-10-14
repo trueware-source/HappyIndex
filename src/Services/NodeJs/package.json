@@ -1,0 +1,15 @@
+{
+  "name": "HappyIndex",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test",
+    "start": "npm index.js"
+  },
+  "author": "Terrence Beenade",
+  "license": "MIT",
+  "dependencies": {
+    "good": "^3.0.1",
+    "hapi": "^7.0.0"
+  }
+}

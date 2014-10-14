@@ -11,39 +11,46 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{204834
 		.nuget\packages.config = .nuget\packages.config
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HappyIndex.Site", "HappyIndex.Site\HappyIndex.Site.csproj", "{50BD65D6-B344-4F2A-8A4C-974326E022F3}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Clients", "Clients", "{4011ECBA-EB11-4090-9014-091749042CFC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HappyIndex.Services", "HappyIndex.Services\HappyIndex.Services.csproj", "{D1F5BB17-0308-4D9A-A566-162B2BE8F591}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{56F6B82C-5100-4792-BE7B-1ACB3305434D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HappyIndex.Services.UnitTests", "HappyIndex.Services.UnitTests\HappyIndex.Services.UnitTests.csproj", "{92D6DAD4-1D58-4B26-859F-20BA9D1707CF}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HappyIndex.Site.IntegrationTests", "HappyIndex.Site.IntegrationTests\HappyIndex.Site.IntegrationTests.csproj", "{034FAD81-375E-4706-87C2-1988A3B288F6}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HappyIndex.Host", "HappyIndex.Host\HappyIndex.Host.csproj", "{48F6A1CB-0136-4710-BC22-043F8E50D66B}"
-EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "HappyIndex.Host.Fsharp", "HappyIndex.Host.Fsharp\HappyIndex.Host.Fsharp.fsproj", "{CF7F20EB-2B0E-456E-AFDB-8E9601F70794}"
-EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "HappyIndex.Client.Web", "http://localhost:2429", "{D6CEB251-DACF-4EB7-8C90-1C19FFBEA019}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "AngularJs", "http://localhost:5549", "{97A3FF95-1C82-4D3E-B019-564BFF22FD21}"
 	ProjectSection(WebsiteProperties) = preProject
 		UseIISExpress = "true"
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_2429"
-		Debug.AspNetCompiler.PhysicalPath = "HappyIndex.Client.Web\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_2429\"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_5549"
+		Debug.AspNetCompiler.PhysicalPath = "Clients\AngularJs\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_5549\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_2429"
-		Release.AspNetCompiler.PhysicalPath = "HappyIndex.Client.Web\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_2429\"
+		Release.AspNetCompiler.VirtualPath = "/localhost_5549"
+		Release.AspNetCompiler.PhysicalPath = "Clients\AngularJs\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_5549\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		SlnRelativePath = "HappyIndex.Client.Web\"
-		DefaultWebSiteLanguage = "Visual C#"
+		SlnRelativePath = "Clients\AngularJs\"
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CSharp", "CSharp", "{38EA4DF0-F996-4CBA-B92F-5E90C289D687}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HappyIndex.Host", "Services\CSharp\HappyIndex.Host\HappyIndex.Host.csproj", "{48F6A1CB-0136-4710-BC22-043F8E50D66B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HappyIndex.Services", "Services\CSharp\HappyIndex.Services\HappyIndex.Services.csproj", "{D1F5BB17-0308-4D9A-A566-162B2BE8F591}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HappyIndex.Services.UnitTests", "Services\CSharp\HappyIndex.Services.UnitTests\HappyIndex.Services.UnitTests.csproj", "{92D6DAD4-1D58-4B26-859F-20BA9D1707CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HappyIndex.Site", "Services\CSharp\HappyIndex.Site\HappyIndex.Site.csproj", "{50BD65D6-B344-4F2A-8A4C-974326E022F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HappyIndex.Site.IntegrationTests", "Services\CSharp\HappyIndex.Site.IntegrationTests\HappyIndex.Site.IntegrationTests.csproj", "{034FAD81-375E-4706-87C2-1988A3B288F6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FSharp", "FSharp", "{E67C1BFA-F6C8-4610-A7B0-70CF3D6CE73F}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "HappyIndex.Host.Fsharp", "Services\FSharp\HappyIndex.Host.Fsharp.fsproj", "{CF7F20EB-2B0E-456E-AFDB-8E9601F70794}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,10 +58,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{50BD65D6-B344-4F2A-8A4C-974326E022F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{50BD65D6-B344-4F2A-8A4C-974326E022F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{50BD65D6-B344-4F2A-8A4C-974326E022F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{50BD65D6-B344-4F2A-8A4C-974326E022F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97A3FF95-1C82-4D3E-B019-564BFF22FD21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97A3FF95-1C82-4D3E-B019-564BFF22FD21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97A3FF95-1C82-4D3E-B019-564BFF22FD21}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{97A3FF95-1C82-4D3E-B019-564BFF22FD21}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{48F6A1CB-0136-4710-BC22-043F8E50D66B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48F6A1CB-0136-4710-BC22-043F8E50D66B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48F6A1CB-0136-4710-BC22-043F8E50D66B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48F6A1CB-0136-4710-BC22-043F8E50D66B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D1F5BB17-0308-4D9A-A566-162B2BE8F591}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D1F5BB17-0308-4D9A-A566-162B2BE8F591}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D1F5BB17-0308-4D9A-A566-162B2BE8F591}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -63,24 +74,31 @@ Global
 		{92D6DAD4-1D58-4B26-859F-20BA9D1707CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{92D6DAD4-1D58-4B26-859F-20BA9D1707CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{92D6DAD4-1D58-4B26-859F-20BA9D1707CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50BD65D6-B344-4F2A-8A4C-974326E022F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50BD65D6-B344-4F2A-8A4C-974326E022F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50BD65D6-B344-4F2A-8A4C-974326E022F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50BD65D6-B344-4F2A-8A4C-974326E022F3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{034FAD81-375E-4706-87C2-1988A3B288F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{034FAD81-375E-4706-87C2-1988A3B288F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{034FAD81-375E-4706-87C2-1988A3B288F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{034FAD81-375E-4706-87C2-1988A3B288F6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{48F6A1CB-0136-4710-BC22-043F8E50D66B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{48F6A1CB-0136-4710-BC22-043F8E50D66B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{48F6A1CB-0136-4710-BC22-043F8E50D66B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{48F6A1CB-0136-4710-BC22-043F8E50D66B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CF7F20EB-2B0E-456E-AFDB-8E9601F70794}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CF7F20EB-2B0E-456E-AFDB-8E9601F70794}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF7F20EB-2B0E-456E-AFDB-8E9601F70794}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF7F20EB-2B0E-456E-AFDB-8E9601F70794}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D6CEB251-DACF-4EB7-8C90-1C19FFBEA019}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D6CEB251-DACF-4EB7-8C90-1C19FFBEA019}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D6CEB251-DACF-4EB7-8C90-1C19FFBEA019}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{D6CEB251-DACF-4EB7-8C90-1C19FFBEA019}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{97A3FF95-1C82-4D3E-B019-564BFF22FD21} = {4011ECBA-EB11-4090-9014-091749042CFC}
+		{38EA4DF0-F996-4CBA-B92F-5E90C289D687} = {56F6B82C-5100-4792-BE7B-1ACB3305434D}
+		{E67C1BFA-F6C8-4610-A7B0-70CF3D6CE73F} = {56F6B82C-5100-4792-BE7B-1ACB3305434D}
+		{48F6A1CB-0136-4710-BC22-043F8E50D66B} = {38EA4DF0-F996-4CBA-B92F-5E90C289D687}
+		{D1F5BB17-0308-4D9A-A566-162B2BE8F591} = {38EA4DF0-F996-4CBA-B92F-5E90C289D687}
+		{92D6DAD4-1D58-4B26-859F-20BA9D1707CF} = {38EA4DF0-F996-4CBA-B92F-5E90C289D687}
+		{50BD65D6-B344-4F2A-8A4C-974326E022F3} = {38EA4DF0-F996-4CBA-B92F-5E90C289D687}
+		{034FAD81-375E-4706-87C2-1988A3B288F6} = {38EA4DF0-F996-4CBA-B92F-5E90C289D687}
+		{CF7F20EB-2B0E-456E-AFDB-8E9601F70794} = {E67C1BFA-F6C8-4610-A7B0-70CF3D6CE73F}
 	EndGlobalSection
 EndGlobal

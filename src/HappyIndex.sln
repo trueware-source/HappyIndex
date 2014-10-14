@@ -50,6 +50,48 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FSharp", "FSharp", "{E67C1B
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "HappyIndex.Host.Fsharp", "Services\FSharp\HappyIndex.Host.Fsharp.fsproj", "{CF7F20EB-2B0E-456E-AFDB-8E9601F70794}"
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Go", "http://localhost:64269", "{722F1255-BB01-48EE-A6E4-7E8F77FA3C8A}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_64269"
+		Debug.AspNetCompiler.PhysicalPath = "Services\Go\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_64269\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_64269"
+		Release.AspNetCompiler.PhysicalPath = "Services\Go\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_64269\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "Services\Go\"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "NodeJs", "http://localhost:64352", "{4E0B8DD1-F73B-4FA3-8AF4-632A370EE3B7}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_64352"
+		Debug.AspNetCompiler.PhysicalPath = "Services\NodeJs\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_64352\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_64352"
+		Release.AspNetCompiler.PhysicalPath = "Services\NodeJs\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_64352\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "Services\NodeJs\"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -80,6 +122,14 @@ Global
 		{CF7F20EB-2B0E-456E-AFDB-8E9601F70794}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF7F20EB-2B0E-456E-AFDB-8E9601F70794}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF7F20EB-2B0E-456E-AFDB-8E9601F70794}.Release|Any CPU.Build.0 = Release|Any CPU
+		{722F1255-BB01-48EE-A6E4-7E8F77FA3C8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{722F1255-BB01-48EE-A6E4-7E8F77FA3C8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{722F1255-BB01-48EE-A6E4-7E8F77FA3C8A}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{722F1255-BB01-48EE-A6E4-7E8F77FA3C8A}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{4E0B8DD1-F73B-4FA3-8AF4-632A370EE3B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E0B8DD1-F73B-4FA3-8AF4-632A370EE3B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E0B8DD1-F73B-4FA3-8AF4-632A370EE3B7}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E0B8DD1-F73B-4FA3-8AF4-632A370EE3B7}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -93,5 +143,7 @@ Global
 		{034FAD81-375E-4706-87C2-1988A3B288F6} = {38EA4DF0-F996-4CBA-B92F-5E90C289D687}
 		{E67C1BFA-F6C8-4610-A7B0-70CF3D6CE73F} = {56F6B82C-5100-4792-BE7B-1ACB3305434D}
 		{CF7F20EB-2B0E-456E-AFDB-8E9601F70794} = {E67C1BFA-F6C8-4610-A7B0-70CF3D6CE73F}
+		{722F1255-BB01-48EE-A6E4-7E8F77FA3C8A} = {56F6B82C-5100-4792-BE7B-1ACB3305434D}
+		{4E0B8DD1-F73B-4FA3-8AF4-632A370EE3B7} = {56F6B82C-5100-4792-BE7B-1ACB3305434D}
 	EndGlobalSection
 EndGlobal

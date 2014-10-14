@@ -2,13 +2,13 @@
 
 var app = angular.module('dataServices', ['ngResource'])
     .factory('Feedback', function($resource) {
-        return $resource('api/feedback/:id', { id: '@id' });
+      return $resource('http://localhost:8080/api/feedback/:id', { id: '@id' });
     })
     .factory('pollingStationService', ['$q', '$http', function($q, $http) {
 
         var _getPollingStationReport = function (pollingStation, startDate, endDate) {
             var deferred = $q.defer();
-            $http.get("api/reports/pollingstation", { params: { "start": startDate, "end": endDate, "name": pollingStation } })
+          $http.get("http://localhost:8080/api/reports/pollingstation", { params: { "start": startDate, "end": endDate, "name": pollingStation } })
                 .then(
                     function(result) { // success
                         deferred.resolve(result.data);
@@ -21,7 +21,7 @@ var app = angular.module('dataServices', ['ngResource'])
 
         var _getCompanyFeedbackReport = function (startDate, endDate) {
             var deferred = $q.defer();
-            $http.get("api/reports/company", { params: { "startDate": startDate, "endDate": endDate } })
+          $http.get("http://localhost:8080/api/reports/company", { params: { "startDate": startDate, "endDate": endDate } })
                 .then(
                     function (result) { // success
                         deferred.resolve(result.data);
@@ -34,7 +34,7 @@ var app = angular.module('dataServices', ['ngResource'])
 
         var getPollingStations = function () {
             var deferred = $q.defer();
-            $http.get("api/pollingstations")
+          $http.get("http://localhost:8080/api/pollingstations")
                 .then(
                     function (result) { // success
                         deferred.resolve(result.data);
@@ -47,7 +47,7 @@ var app = angular.module('dataServices', ['ngResource'])
 
         var updatePollingStation = function (station) {
             var deferred = $q.defer();
-            $http.put("api/pollingstations/" + station.id, station)
+          $http.put("http://localhost:8080/api/pollingstations/" + station.id, station)
                 .then(
                     function (result) { // success
                         deferred.resolve(result.data);
@@ -69,7 +69,7 @@ var app = angular.module('dataServices', ['ngResource'])
         
         var getQuestions = function (category) {
             var deferred = $q.defer();
-            $http.get("api/questions", { params: { "category": category} })
+            $http.get("http://localhost:8080/api/questions", { params: { "category": category} })
                 .then(
                     function (result) { // success
                         deferred.resolve(result.data);
@@ -110,7 +110,7 @@ var app = angular.module('dataServices', ['ngResource'])
         var addQuestion = function (text, category) {
             var deferred = $q.defer();
             var question = { text: text, category: category };
-            $http.post('api/questions', question);
+            $http.post('http://localhost:8080/api/questions', question);
             return deferred.promise;
         };
 

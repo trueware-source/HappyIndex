@@ -35,37 +35,37 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Owin">
-      <HintPath>..\packages\Microsoft.Owin.3.0.0\lib\net45\Microsoft.Owin.dll</HintPath>
+      <HintPath>..\..\..\packages\Microsoft.Owin.3.0.0\lib\net45\Microsoft.Owin.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Owin.Cors">
       <HintPath>..\..\..\packages\Microsoft.Owin.Cors.3.0.0\lib\net45\Microsoft.Owin.Cors.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Owin.FileSystems">
-      <HintPath>..\packages\Microsoft.Owin.FileSystems.3.0.0\lib\net45\Microsoft.Owin.FileSystems.dll</HintPath>
+      <HintPath>..\..\..\packages\Microsoft.Owin.FileSystems.3.0.0\lib\net45\Microsoft.Owin.FileSystems.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Owin.Host.HttpListener">
-      <HintPath>..\packages\Microsoft.Owin.Host.HttpListener.3.0.0\lib\net45\Microsoft.Owin.Host.HttpListener.dll</HintPath>
+      <HintPath>..\..\..\packages\Microsoft.Owin.Host.HttpListener.3.0.0\lib\net45\Microsoft.Owin.Host.HttpListener.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Owin.Hosting">
-      <HintPath>..\packages\Microsoft.Owin.Hosting.3.0.0\lib\net45\Microsoft.Owin.Hosting.dll</HintPath>
+      <HintPath>..\..\..\packages\Microsoft.Owin.Hosting.3.0.0\lib\net45\Microsoft.Owin.Hosting.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Owin.StaticFiles">
-      <HintPath>..\packages\Microsoft.Owin.StaticFiles.3.0.0\lib\net45\Microsoft.Owin.StaticFiles.dll</HintPath>
+      <HintPath>..\..\..\packages\Microsoft.Owin.StaticFiles.3.0.0\lib\net45\Microsoft.Owin.StaticFiles.dll</HintPath>
     </Reference>
     <Reference Include="Nancy">
-      <HintPath>..\packages\Nancy.0.23.2\lib\net40\Nancy.dll</HintPath>
+      <HintPath>..\..\..\packages\Nancy.0.23.2\lib\net40\Nancy.dll</HintPath>
     </Reference>
     <Reference Include="Nancy.Owin">
-      <HintPath>..\packages\Nancy.Owin.0.23.2\lib\net40\Nancy.Owin.dll</HintPath>
+      <HintPath>..\..\..\packages\Nancy.Owin.0.23.2\lib\net40\Nancy.Owin.dll</HintPath>
     </Reference>
     <Reference Include="Owin">
-      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <HintPath>..\..\..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web.Cors">
-      <HintPath>..\..\..\packages\Microsoft.AspNet.Cors.5.0.0\lib\net45\System.Web.Cors.dll</HintPath>
+      <HintPath>..\..\..\packages\Microsoft.AspNet.Cors.5.2.2\lib\net45\System.Web.Cors.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -86,51 +86,8 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\Vendor\bs\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="Content\Vendor\bs\js\bootstrap.js" />
-    <Content Include="Content\Vendor\bs\js\bootstrap.min.js" />
-    <Content Include="Content\Vendor\bs\js\respond.min.js" />
-    <Content Include="Content\Vendor\ng-google-chart.js" />
-    <Content Include="Content\Vendor\ui-bootstrap-0.5.0.min.js" />
-    <Content Include="Views\Index.html" />
     <None Include="App.config" />
-    <Content Include="Content\Vendor\bs\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\Vendor\bs\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="Content\Vendor\bs\fonts\glyphicons-halflings-regular.woff" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Content\App\app.js" />
-    <Content Include="Content\App\filters.js" />
-    <Content Include="Content\App\indicatorController.js" />
-    <Content Include="Content\App\manage-questions-controller.js" />
-    <Content Include="Content\App\partials\indicator.html" />
-    <Content Include="Content\App\partials\managequestions.html" />
-    <Content Include="Content\App\partials\pollingstation.html" />
-    <Content Include="Content\App\partials\pollingstationstatus.html" />
-    <Content Include="Content\App\partials\report.html" />
-    <Content Include="Content\App\pollingStationController.js" />
-    <Content Include="Content\App\pollingStationStatusController.js" />
-    <Content Include="Content\App\reportController.js" />
-    <Content Include="Content\App\services.js" />
-    <Content Include="Content\Img\neutral.png" />
-    <Content Include="Content\Img\neutralclick.png" />
-    <Content Include="Content\Img\saddy.png" />
-    <Content Include="Content\Img\smiley.png" />
-    <Content Include="Content\Img\tick.png" />
-    <Content Include="Content\site.css" />
-    <Content Include="Content\Vendor\angular-animate.min.js" />
-    <Content Include="Content\Vendor\angular-cookies.min.js" />
-    <Content Include="Content\Vendor\angular-mocks.js" />
-    <Content Include="Content\Vendor\angular-resource.min.js" />
-    <Content Include="Content\Vendor\angular-route.min.js" />
-    <Content Include="Content\Vendor\angular.min.js" />
-    <Content Include="Content\Vendor\angulartics-google-analytics.min.js" />
-    <Content Include="Content\Vendor\angulartics.min.js" />
-    <Content Include="Content\Vendor\bs\css\bootstrap-theme.css" />
-    <Content Include="Content\Vendor\bs\css\bootstrap-theme.min.css" />
-    <Content Include="Content\Vendor\bs\css\bootstrap.css" />
-    <Content Include="Content\Vendor\bs\css\bootstrap.min.css" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HappyIndex.Services\HappyIndex.Services.csproj">

@@ -2,16 +2,16 @@
 happyApp.config(function($routeProvider) {
     $routeProvider
         .when('/indicator', {
-            templateUrl: 'content/app/partials/indicator.html', controller : 'IndicatorController'
+            templateUrl: 'partials/indicator.html', controller : 'IndicatorController'
         })
         .when('/questions', {
-          templateUrl: 'content/app/partials/managequestions.html', controller: 'ManageQuestionsController'
+          templateUrl: 'partials/managequestions.html', controller: 'ManageQuestionsController'
         })
         .when('/pollingstation', {
-          templateUrl: 'content/app/partials/pollingstation.html', controller: 'PollingStationController'
+          templateUrl: 'partials/pollingstation.html', controller: 'PollingStationController'
         })
         .when('/report', {
-          templateUrl: 'content/app/partials/report.html', controller: 'ReportController'
+          templateUrl: 'partials/report.html', controller: 'ReportController'
         })
         .otherwise({ redirectTo: '/indicator' });
 })

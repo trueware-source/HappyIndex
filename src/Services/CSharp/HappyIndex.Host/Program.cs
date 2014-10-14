@@ -11,7 +11,7 @@ namespace HappyIndex.Host
     {
         static void Main(string[] args)
         {
-            var url = "http://+:8080";
+            var url = getSiteUrl(args);
 
             using (WebApp.Start<Startup>(url))
             {
@@ -19,6 +19,13 @@ namespace HappyIndex.Host
                 Console.WriteLine("Press enter to exit");
                 Console.ReadLine();
             }
+        }
+
+        static string getSiteUrl(string[] args)
+        {
+            var defaultPort = "8080";
+            var port = args.Length == 1 ? args[0] : defaultPort;
+            return string.Format("http://+:{0}", port);
         }
     }
 }

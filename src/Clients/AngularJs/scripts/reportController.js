@@ -1,5 +1,4 @@
-﻿// the dialog is injected in the specified controller
-function ReportController($scope, $timeout, pollingStationService, utils) {
+﻿function ReportController($scope, $timeout, pollingStationService, utils) {
     $scope.model = {};
     $scope.countFilter = function (reason) {
         return reason.count > 12;

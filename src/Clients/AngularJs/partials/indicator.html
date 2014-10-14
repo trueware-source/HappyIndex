@@ -16,20 +16,20 @@
     <div class="row">
         <div class="col-xs-4">
             <div class="btn indicator-button indicator-button-happy" ng-click='saveFeedback(1,"EE4A8FDB-5C66-48C4-96D2-3A47D873BFB0")'>
-                <img src="content/img/smiley.png" ng-hide="model.clickingHappy" />
-                <img src="content/img/tick.png" ng-show="model.clickingHappy" />
+                <img src="/img/smiley.png" ng-hide="model.clickingHappy" />
+                <img src="/img/tick.png" ng-show="model.clickingHappy" />
             </div>
         </div>
         <div class="col-xs-4">
             <div class="btn indicator-button indicator-button-indifferent" ng-click='saveFeedback(0,"EE4A8FDB-5C66-48C4-96D2-3A47D873BFB0")'>
-                <img src="content/img/neutral.png" ng-hide="model.clickingNeutral" />
-                <img src="content/img/tick.png" ng-show="model.clickingNeutral" />
+                <img src="/img/neutral.png" ng-hide="model.clickingNeutral" />
+                <img src="/img/tick.png" ng-show="model.clickingNeutral" />
             </div>
         </div>
         <div class="col-xs-4">
             <div class="btn indicator-button indicator-button-nothappy" ng-click='saveFeedback(-1,"EE4A8FDB-5C66-48C4-96D2-3A47D873BFB0")'>
-                <img src="content/img/saddy.png" ng-hide="model.clickingSaddy" />
-                <img src="content/img/tick.png" ng-show="model.clickingSaddy" />
+                <img src="/img/saddy.png" ng-hide="model.clickingSaddy" />
+                <img src="/img/tick.png" ng-show="model.clickingSaddy" />
             </div>
         </div>
         <div class="col-xs-4 hidden-xs">
@@ -37,7 +37,7 @@
             <!--<button ng-repeat="question in model.happyQuestions" class="btn btn-success btn-lg btn-block" ng-click='saveFeedback(1,question.id)'><h3>{{question.text}}</h3></button>-->
         </div>
         <div class="col-xs-4">
-            <div ng-include="'content/app/partials/pollingstationstatus.html'"></div>
+            <div ng-include="'partials/pollingstationstatus.html'"></div>
         </div>
         <div class="col-xs-4 hidden-xs">
             <div ng-repeat="question in model.unhappyQuestions" class="btn indicator-button indicator-button-sml indicator-button-nothappy" ng-click='saveFeedback(-1,question.id)'><h3>{{question.text}}</h3></div>

@@ -1,25 +1,27 @@
 ﻿var Hapi = require('hapi');
 var Good = require('good');
+var Mongoose  = require('mongoose');
+var server = new Hapi.Server(3000);
+var routes = require('./routes');
 
-// Create a server with a host and port
-var server = new Hapi.Server('localhost', 8000);
+Mongoose.connect('mongodb://localhost/happyindex');
 
-// Add the route
 server.route({
-  method: 'GET',
-  path: '/api',
-  handler: function (request, reply) {
-
-    reply('hello world');
-  }
+    method: 'GET',
+    path: '/',
+    handler: function (request, reply) {
+        reply('Hello, world!');
+    }
 });
 
-server.pack.register(Good, function (err) {
-  if (err) {
-    throw err; // something bad happened loading the plugin
-  }
+routes.init(server);
 
-  server.start(function () {
-    server.log('info', 'Server running at: ' + server.info.uri);
-  });
+server.pack.register(Good, function (err) {
+    if (err) {
+        throw err; // something bad happened loading the plugin
+    }
+
+    server.start(function () {
+        server.log('info', 'Server running at: ' + server.info.uri);
+    });
 });

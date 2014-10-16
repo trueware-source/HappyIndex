@@ -51,7 +51,7 @@ exports.create = function (server) {
         handler: function (request, reply) {
 
             pollingStation = new PollingStation();
-            pollingStation.Name = request.payload.name;
+            pollingStation.name = request.payload.name;
             pollingStation.save(function (err) {
                 if (!err) {
                     reply(pollingStation).created('/pollingstations/' + pollingStation._id);    // HTTP 201

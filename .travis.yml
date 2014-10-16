@@ -5,4 +5,4 @@ node_js:
 env:
   - NODE_DIR=src/services/nodejs
 
-script: cd $TEST_DIR && npm install
+script: cd $NODE_DIR && npm install

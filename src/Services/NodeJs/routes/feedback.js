@@ -1,11 +1,11 @@
-var Boom    = require('boom');                                  // HTTP Errors
-var Joi     = require('joi');                                   // Validation
-var PollingStation   = require('../models/pollingstation.js').PollingStation; // Mongoose ODM
+var Boom = require('boom');                                  // HTTP Errors
+var Joi = require('joi');                                   // Validation
+var Feedback = require('../models/feedback.js').Feedback; // Mongoose ODM
 
 // Exports = exports? Huh? Read: http://stackoverflow.com/a/7142924/5210
 module.exports = exports = function (server) {
 
-    console.log('Loading polling station routes');
+    console.log('Loading feedback routes');
     exports.index(server);
     exports.create(server);
     exports.show(server);
@@ -13,20 +13,20 @@ module.exports = exports = function (server) {
 };
 
 /**
- * GET /pollingstations
- * Gets all the pollingstations from MongoDb and returns them.
+ * GET /feedback
+ * Gets all the feedback from MongoDb and returns them.
  *
  * @param server - The Hapi Server
  */
 exports.index = function (server) {
-    // GET /pollingstations
+    // GET /feedback
     server.route({
         method: 'GET',
-        path: '/pollingstations',
+        path: '/feedback',
         handler: function (request, reply) {
-            PollingStation.find(function (err, pollingStations) {
+            Feedback.find(function (err, feedback) {
                 if (!err) {
-                    reply(pollingStations);
+                    reply(feedback);
                 } else {
                     reply(Boom.badImplementation(err)); // 500 error
                 }
@@ -37,24 +37,26 @@ exports.index = function (server) {
 
 /**
  * POST /new
- * Creates a new pollingStation in the datastore.
+ * Creates a new feedback in the datastore.
  *
  * @param server - The Hapi Serve
  */
 exports.create = function (server) {
-    // POST /pollingstations
-    var pollingStation;
+    // POST /feedback
+    var feedback;
 
     server.route({
         method: 'POST',
-        path: '/pollingstations',
+        path: '/feedback',
         handler: function (request, reply) {
 
-            pollingStation = new PollingStation();
-            pollingStation.name = request.payload.name;
-            pollingStation.save(function (err) {
+            feedback = new Feedback();
+            feedback.indicator = request.payload.indicator;
+            feedback.question = request.payload.question;
+            feedback.questionsShown = request.payload.questionsShown;
+            feedback.save(function (err) {
                 if (!err) {
-                    reply(pollingStation).created('/pollingstations/' + pollingStation._id);    // HTTP 201
+                    reply(feedback).created('/feedback/' + feedback._id);    // HTTP 201
                 } else {
                     reply(Boom.forbidden(getErrorMessageFrom(err))); // HTTP 403
                 }
@@ -64,8 +66,8 @@ exports.create = function (server) {
 };
 
 /*/**
- * GET /pollingstations/{id}
- * Gets the pollingstation based upon the {id} parameter.
+ * GET /feedback/{id}
+ * Gets the feedback based upon the {id} parameter.
  *
  * @param server
  */
@@ -73,7 +75,7 @@ exports.create = function (server) {
 
     server.route({
         method: 'GET',
-        path: '/pollingstations/{id}',
+        path: '/feedback/{id}',
         config: {
             validate: {
                 params: {
@@ -82,9 +84,9 @@ exports.create = function (server) {
             }
         },
         handler: function (request, reply) {
-            PollingStation.findById(request.params.id, function (err, pollingstation) {
-                if (!err && pollingstation) {
-                    reply(pollingstation);
+            Feedback.findById(request.params.id, function (err, feedback) {
+                if (!err && feedback) {
+                    reply(feedback);
                 } else if (err) {
                     // Log it, but don't show the user, don't want to expose ourselves (think security)
                     console.log(err);
@@ -99,15 +101,15 @@ exports.create = function (server) {
 };
 
 /**
- * DELETE /pollingstations/{id}
- * Deletes an pollingstations, based on the pollingstations id in the path.
+ * DELETE /feedback/{id}
+ * Deletes an feedback, based on the feedback id in the path.
  *
  * @param server - The Hapi Server
  */
 exports.remove = function (server) {
     server.route({
         method: 'DELETE',
-        path: '/pollingstations/{id}',
+        path: '/feedback/{id}',
         config: {
             validate: {
                 params: {
@@ -116,16 +118,16 @@ exports.remove = function (server) {
             }
         },
         handler: function (request, reply) {
-            PollingStation.findById(request.params.id, function(err, pollingstation) {
-                if(!err && pollingstation) {
-                    pollingstation.remove();
-                    reply({ message: "Pollingstation deleted successfully"});
+            Feedback.findById(request.params.id, function(err, feedback) {
+                if(!err && feedback) {
+                    feedback.remove();
+                    reply({ message: "Feedback deleted successfully"});
                 } else if(!err) {
                     // Couldn't find the object.
                     reply(Boom.notFound());
                 } else {
                     console.log(err);
-                    reply(Boom.badRequest("Could not delete Pollingstation"));
+                    reply(Boom.badRequest("Could not delete Feedback"));
                 }
             });
         }

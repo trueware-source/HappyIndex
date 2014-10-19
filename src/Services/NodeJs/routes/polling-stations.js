@@ -1,33 +1,32 @@
-var Boom = require('boom');                                  // HTTP Errors
-var Joi = require('joi');                                   // Validation
-var Question = require('../models/question.js').Question; // Mongoose ODM
+var Boom    = require('boom');                                  // HTTP Errors
+var Joi     = require('joi');                                   // Validation
+var PollingStation   = require('../models/polling-station.js').PollingStation; // Mongoose ODM
 
 // Exports = exports? Huh? Read: http://stackoverflow.com/a/7142924/5210
 module.exports = exports = function (server) {
 
-    console.log('Loading question routes');
+    console.log('Loading polling station routes');
     exports.index(server);
     exports.create(server);
     exports.show(server);
     exports.remove(server);
-    exports.update(server);
 };
 
 /**
- * GET /questions
- * Gets all the questions from MongoDb and returns them.
+ * GET /pollingstations
+ * Gets all the pollingstations from MongoDb and returns them.
  *
  * @param server - The Hapi Server
  */
 exports.index = function (server) {
-    // GET /questions
+    // GET /pollingstations
     server.route({
         method: 'GET',
-        path: '/questions',
+        path: '/polling-stations',
         handler: function (request, reply) {
-            Question.find(function (err, questions) {
+            PollingStation.find(function (err, pollingStations) {
                 if (!err) {
-                    reply(questions);
+                    reply(pollingStations);
                 } else {
                     reply(Boom.badImplementation(err)); // 500 error
                 }
@@ -38,26 +37,24 @@ exports.index = function (server) {
 
 /**
  * POST /new
- * Creates a new question in the datastore.
+ * Creates a new pollingStation in the datastore.
  *
  * @param server - The Hapi Serve
  */
 exports.create = function (server) {
-    // POST /questions
-    var question;
+    // POST /pollingstations
+    var pollingStation;
 
     server.route({
         method: 'POST',
-        path: '/questions',
+        path: '/polling-stations',
         handler: function (request, reply) {
 
-            question = new Question();
-            question.text = request.payload.text;
-            console.log(question.text);
-            question.category = request.payload.category;
-            question.save(function (err) {
+            pollingStation = new PollingStation();
+            pollingStation.name = request.payload.name;
+            pollingStation.save(function (err) {
                 if (!err) {
-                    reply(question).created('/questions/' + question._id);    // HTTP 201
+                    reply(pollingStation).created('/pollingstations/' + pollingStation._id);    // HTTP 201
                 } else {
                     reply(Boom.forbidden(getErrorMessageFrom(err))); // HTTP 403
                 }
@@ -66,45 +63,9 @@ exports.create = function (server) {
     });
 };
 
-/**
- * PUT /updates
- * Updates a question in the datastore.
- *
- * @param server - The Hapi Server
- */
-exports.update = function (server) {
-    // PUT /questions
-    var question;
-
-    server.route({
-        method: 'PUT',
-        path: '/questions/{id}',
-        handler: function (request, reply) {
-
-            Question.findById(request.params.id, function(err, question){
-              if (err){
-                reply(err);
-                return;
-              }
-
-              question.text = request.payload.text;
-              question.category = request.payload.category;
-              question.save(function (err) {
-                  if (!err) {
-                      reply(question).created('/questions/' + question._id);    // HTTP 201
-                  } else {
-                      reply(Boom.forbidden(getErrorMessageFrom(err))); // HTTP 403
-                  }
-              });
-            });
-        }
-    });
-};
-
-
 /*/**
- * GET /questions/{id}
- * Gets the question based upon the {id} parameter.
+ * GET /pollingstations/{id}
+ * Gets the pollingstation based upon the {id} parameter.
  *
  * @param server
  */
@@ -112,7 +73,7 @@ exports.update = function (server) {
 
     server.route({
         method: 'GET',
-        path: '/questions/{id}',
+        path: '/polling-stations/{id}',
         config: {
             validate: {
                 params: {
@@ -121,9 +82,9 @@ exports.update = function (server) {
             }
         },
         handler: function (request, reply) {
-            Question.findById(request.params.id, function (err, question) {
-                if (!err && question) {
-                    reply(question);
+            PollingStation.findById(request.params.id, function (err, pollingstation) {
+                if (!err && pollingstation) {
+                    reply(pollingstation);
                 } else if (err) {
                     // Log it, but don't show the user, don't want to expose ourselves (think security)
                     console.log(err);
@@ -138,15 +99,15 @@ exports.update = function (server) {
 };
 
 /**
- * DELETE /questions/{id}
- * Deletes an questions, based on the questions id in the path.
+ * DELETE /pollingstations/{id}
+ * Deletes an pollingstations, based on the pollingstations id in the path.
  *
  * @param server - The Hapi Server
  */
 exports.remove = function (server) {
     server.route({
         method: 'DELETE',
-        path: '/questions/{id}',
+        path: '/polling-stations/{id}',
         config: {
             validate: {
                 params: {
@@ -155,16 +116,16 @@ exports.remove = function (server) {
             }
         },
         handler: function (request, reply) {
-            Question.findById(request.params.id, function(err, question) {
-                if(!err && question) {
-                    question.remove();
-                    reply({ message: "Question deleted successfully"});
+            PollingStation.findById(request.params.id, function(err, pollingstation) {
+                if(!err && pollingstation) {
+                    pollingstation.remove();
+                    reply({ message: "Pollingstation deleted successfully"});
                 } else if(!err) {
                     // Couldn't find the object.
                     reply(Boom.notFound());
                 } else {
                     console.log(err);
-                    reply(Boom.badRequest("Could not delete Question"));
+                    reply(Boom.badRequest("Could not delete Pollingstation"));
                 }
             });
         }

@@ -1,6 +1,8 @@
 exports.init = function(server) {
   console.log('Loading routes');
 
-  require('./pollingstations')(server);
+  require('./polling-stations')(server);
   require('./questions')(server);
+  require('./feedback')(server);
+  require('./reports')(server);
 };

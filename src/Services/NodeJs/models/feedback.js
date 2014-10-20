@@ -5,7 +5,7 @@ var feedbackSchema = new Schema({
   indicator : { type: Number, required: true },
   question : { type : Mongoose.Schema.ObjectId, ref : 'questions', required: true },
   questionsShown : [{ type : Mongoose.Schema.ObjectId, ref : 'questions'}],
-  pollingStation : {type : Mongoose.Schema.ObjectId, ref : 'pollingStation' },
+  pollingStation : {type : Mongoose.Schema.ObjectId, ref : 'pollingStation', required: true },
   createDate : { type: Date, default: new Date().getTime() }
 });
 

@@ -54,6 +54,7 @@ exports.create = function (server) {
             feedback.indicator = request.payload.indicator;
             feedback.question = request.payload.question;
             feedback.questionsShown = request.payload.questionsShown;
+            feedback.pollingStation = request.payload.pollingStation;
             feedback.save(function (err) {
                 if (!err) {
                     reply(feedback).created('/feedback/' + feedback._id);    // HTTP 201

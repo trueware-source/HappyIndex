@@ -1,7 +1,8 @@
-var Boom = require('boom');                                  // HTTP Errors
-var Joi = require('joi');                                   // Validation
-var Feedback = require('../models/feedback.js').Feedback; // Mongoose ODM
+var Boom = require('boom');
+var Joi = require('joi');
+var Feedback = require('../models/feedback.js').Feedback;
 var calculator = require('../lib/index-calculator');
+var moment = require('moment');
 
 // Exports = exports? Huh? Read: http://stackoverflow.com/a/7142924/5210
 module.exports = exports = function (server) {
@@ -18,40 +19,68 @@ module.exports = exports = function (server) {
 exports.index = function (server) {
   // GET /reports
   server.route({
-      method: 'GET',
-      path: '/reports/{reportName}',
-      handler: function (request, reply) {
-        if(request.params.reportName == "pollingstation"){
-          reply(generatePollingStationReport(request.query.pollingstation));
-        }
-        if(request.params.reportName == "company"){
-          reply(generateCompanyReport());
-        }
-
-        // Feedback.find(function (err, report) {
-        //     if (!err) {
-        //         reply(report);
-        //     } else {
-        //         reply(Boom.badImplementation(err)); // 500 error
-        //     }
-        // });
+    method: 'GET',
+    path: '/reports/{reportName}',
+    handler: function (request, reply) {
+      if(request.params.reportName == "pollingstation"){
+        generatePollingStationReport(request.query.pollingstation,function(error, report){
+          if(error){
+            reply(Boom.badImplementation(error)); 
+          }
+          else{
+           reply(report);
+          }
+        })
       }
+      if(request.params.reportName == "company"){
+        reply(generateCompanyReport());
+      }
+    }
   });
 };
 
-function generatePollingStationReport(pollingStationId){
-  var report;
+function generatePollingStationReport(pollingStationId, callback){
+  var report = {};
+  Feedback.find({'pollingStation': pollingStationId},function(error, feedback){
+    if(error){
+      return error;
+    }
 
-  Feedback.find({'pollingStation': pollingStationId},function(err, feedback){
-    if(!err){
-      //return feedback;
-      console.log(calculator.calculateIndex([1,1,1,1]));
-      return calculator.calculateIndex([1,1,1,1]);
-    }
-    else{
-      return err;
-    }
-  })
+    //set the happinessIndex
+    var indicators = [];
+    feedback.forEach(function(f){
+      indicators.push(f.indicator);
+    });
+    report.happinessIndex = calculator.calculateIndex(indicators);
+
+    //set happinessIndex for today
+    indicators = [];
+    feedback.forEach(function(){
+      if(isFeedbackInRange(feedback, moment().startOf('day').toDate(), moment().endOf('day').toDate())){
+        indicators.push(feedback.indicator);
+      }
+    });
+    report.happinessIndexToday = calculator.calculateIndex(indicators);
+
+    return callback(null, report);
+    //console.log(calculator.calculateIndex([1,1,1,1]));
+    //return calculator.calculateIndex([1,1,1,1]);
+  });
+}
+
+function isFeedbackInRange(feedback, startDate, endDate){
+  //console.log(startDate);
+  //console.log(endDate);
+  console.log(feedback);
+  if(feedback.createDate > startDate && feedback.createDate < endDate) {
+    console.log("got matched");
+    return feedback;
+  } 
+  else {
+    return null;
+  }
+}
+
 
   // return {
   //     happinessIndex: 10,
@@ -100,7 +129,7 @@ function generatePollingStationReport(pollingStationId){
   //       }
   //     ]
   // }
-}
+
 
 function generateCompanyReport(){
   return {

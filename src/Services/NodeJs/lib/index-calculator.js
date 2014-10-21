@@ -1,5 +1,5 @@
  var calculateIndex = function calculateIndex(indicators){
-    if(indicators.length == 0){
+    if(!indicators ||indicators.length == 0){
         return 0;
     }
 

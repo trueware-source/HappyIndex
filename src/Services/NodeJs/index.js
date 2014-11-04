@@ -3,6 +3,7 @@ var Good = require('good');
 var Mongoose  = require('mongoose');
 var server = new Hapi.Server(3000);
 var routes = require('./routes');
+var halacious = require('halacious');   
 
 Mongoose.connect('mongodb://localhost/happyindex');
 
@@ -24,4 +25,8 @@ server.pack.register(Good, function (err) {
     server.start(function () {
         server.log('info', 'Server running at: ' + server.info.uri);
     });
+});
+
+server.pack.register(halacious, function(err){
+    if (err) console.log(err);
 });

@@ -43,6 +43,13 @@ exports.index = function (server) {
           }
         });
       }
+    },
+    config: {
+        validate: {
+            params: {
+                reportName: Joi.valid('reportName','company')
+            }
+        }
     }
   });
 };
@@ -117,23 +124,37 @@ function getDailyIndexes(feedback){
 }
 
 function generateCompanyReport(callback){
-  return callback(null,{
-      happinessIndex: 1,
-      happinessIndexToday: 2,
-      feedbackCount: 3,
-      dailyIndexes: [],
-      unhappyReasons: [],
-      happyReasons: []
+  Feedback.find({},function(error, feedback){
+
+    var report  =  {};
+
+    //set the all-time happinessIndex
+    var indicators = [];
+    feedback.forEach(function(f){
+      indicators.push(f.indicator);
+    });
+    report.happinessIndex = calculator.calculateIndex(indicators);
+
+    //set happinessIndex for today
+    indicators = [];
+    feedback.forEach(function(f){
+      if(isFeedbackInRange(f, moment().startOf('day').toDate(), moment().endOf('day').toDate())){
+        indicators.push(f.indicator);
+      }
+    });
+    report.happinessIndexToday = calculator.calculateIndex(indicators);
+
+    report.feedbackCount = feedback.length;
+
+    report.dailyIndexes = getDailyIndexes(feedback);
+
+    report.unhappyReasons = getReasonsByIndicator(-1, feedback);
+
+    report.happyReasons = getReasonsByIndicator(1, feedback);
+    
+    return callback (null, report);
   });
 }
-
-//company feedback report
-// public int HappinessIndex { get; set; }
-// public int HappinessIndexToday { get; set; }
-// public int FeedbackCount { get; set; }
-// public IList<IDailyIndexData> DailyIndexes { get; set; }
-// public IList<IReasonData> UnhappyReasons { get; set; }
-// public IList<IReasonData> HappyReasons { get; set; }
 
 /**
 * Formats an error message that is returned from Mongoose.
